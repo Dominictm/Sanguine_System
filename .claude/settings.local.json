@@ -112,7 +112,21 @@
       "Bash(Test-Path \"F:\\\\VTM\\\\VTM-project-Claude\\\\characters\\\\fairies\\\\Ямала\\\\Journal_Ямала\\\\retrospective.md\")",
       "Bash(Test-Path \"F:\\\\VTM\\\\VTM-project-Claude\\\\web\\\\public\\\\fonts\")",
       "PowerShell(Start-Process -FilePath \"node\" -ArgumentList \"server.js\" -WorkingDirectory \"F:\\\\VTM\\\\VTM-project-Claude\\\\web\" -WindowStyle Hidden -PassThru)",
-      "Bash(node --check tests/run_all_tests.js)"
+      "Bash(node --check tests/run_all_tests.js)",
+      "Bash(ls \"C:\\\\Users\\\\Vuf\\\\.claude\\\\\" 2>/dev/null *)",
+      "Read(//c/Users/Vuf/.claude\" 2>/dev/**)",
+      "Bash(node -e \"const a = require\\('@anthropic-ai/sdk'\\); const c = new a.Anthropic\\({authToken:'test'}\\); console.log\\('baseURL:', c.baseURL\\)\")",
+      "Bash(node -e \"const d=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); console.log\\('version:', JSON.parse\\(d\\).version\\)\")",
+      "Bash(cd /f/VTM/VTM-project-Claude/web)",
+      "Bash(node -e \"const p = require\\('./node_modules/@anthropic-ai/sdk/package.json'\\); console.log\\(p.version\\)\")",
+      "Bash(cd /f/VTM/VTM-project-Claude)",
+      "Bash(node --check web/server.js)",
+      "Bash(node --check web/public/scripts.js)",
+      "PowerShell(Start-Sleep -Seconds 3; $r = curl -s http://localhost:3000/ 2>&1; if \\($r.Length -gt 100\\) { \"✓ Server responding\" } else { \"✗ Server not ready\"; $r })",
+      "PowerShell(Start-Sleep -Seconds 3; try { $r = Invoke-WebRequest -Uri http://localhost:3000/ -UseBasicParsing -TimeoutSec 3; if \\($r.RawContentLength -gt 100\\) { \"✓ Server responding\" } } catch { \"⏳ Server starting... \" + $_.Exception.Message })",
+      "Bash(grep -E \"modules/[^/]+/[^/]+\\\\.md$\")",
+      "PowerShell(node -e \"console.log\\(/test\\\\Z/.test\\('test'\\)\\); console.log\\(/test\\\\Z/.test\\('test\\\\n'\\)\\); console.log\\(/test$/.test\\('test'\\)\\); console.log\\(/test$/.test\\('test\\\\n'\\)\\);\")",
+      "Bash(xargs grep -li \"аэропорт\\\\|Аэропорт\\\\|aeroport\")"
     ],
     "additionalDirectories": [
       "f:\\VTM\\VTM-Проект-Claude\\.claude\\skills\\literary-writer",
