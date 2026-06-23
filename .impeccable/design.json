@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-22T00:00:00.000Z",
+  "title": "Design System: Sanguine System",
+  "extensions": {
+    "colorMeta": {
+      "void-black": { "role": "neutral", "displayName": "Void Black", "canonical": "oklch(8% 0.01 300)", "tonalRamp": ["#020103", "#07050a", "#0d0a10", "#120f18", "#181420", "#2a2330", "#473a4f", "#6b5a73"] },
+      "border-blood": { "role": "neutral", "displayName": "Border Blood", "canonical": "rgba(139, 0, 0, .22)", "tonalRamp": ["rgba(139,0,0,.08)", "rgba(139,0,0,.14)", "rgba(139,0,0,.22)", "rgba(139,0,0,.32)", "rgba(180,20,0,.45)", "rgba(200,40,0,.6)", "rgba(220,60,20,.75)", "rgba(240,90,40,.9)"] },
+      "blood-oath": { "role": "primary", "displayName": "Blood Oath", "canonical": "oklch(30% 0.18 25)", "tonalRamp": ["#1a0000", "#330000", "#4d0000", "#660000", "#8B0000", "#B80000", "#dc143c", "#ff4d4d"] },
+      "reliquary-gold": { "role": "secondary", "displayName": "Reliquary Gold", "canonical": "oklch(58% 0.12 75)", "tonalRamp": ["#2e2407", "#5c480e", "#8a6c15", "#B8860B", "#DAA520", "#e8bc4a", "#f0d27a", "#f7e6b3"] },
+      "parchment-text": { "role": "neutral", "displayName": "Parchment Text", "canonical": "oklch(89% 0.03 80)", "tonalRamp": ["#3a3528", "#5a5340", "#766c54", "#8c8279", "#a89880", "#c4b9a0", "#E8E0D0", "#f5f0e5"] },
+      "state-success": { "role": "tertiary", "displayName": "Verdant Survival", "canonical": "oklch(75% 0.13 145)", "tonalRamp": ["#1a3a1c", "#2d5e30", "#4a8a4e", "#7dce82", "#8fd49a", "#aee0b3", "#cdeccf", "#e8f7e9"] },
+      "state-danger": { "role": "tertiary", "displayName": "Sigil Danger", "canonical": "oklch(48% 0.2 30)", "tonalRamp": ["#330700", "#661400", "#992100", "#cc2200", "#ff7070", "#ff9d9d", "#ffc4c4", "#ffe5e5"] },
+      "lore-violet": { "role": "tertiary", "displayName": "Lore Violet", "canonical": "oklch(65% 0.1 305)", "tonalRamp": ["#241830", "#3f2a55", "#5f4280", "#a78bca", "#c4a8e0", "#d6c2ea", "#e6dbf2", "#f3edf9"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display — Cinzel Decorative", "purpose": "Логотип, крупные титулы городов и хроник. Только uppercase." },
+      "heading": { "displayName": "Heading — Cinzel", "purpose": "Заголовки модалок, навигация, кнопки, лейблы форм. Печать архива." },
+      "body": { "displayName": "Body — Cormorant Garamond", "purpose": "Основной текст хроник, карточек, описаний." },
+      "label": { "displayName": "Label — Share Tech Mono", "purpose": "Вывод инструментов, технические метаданные, output-area." }
+    },
+    "shadows": [
+      { "name": "glow-accent", "value": "0 0 20px rgba(180, 0, 0, .35)", "purpose": "Hover/focus интерактивных элементов — кнопки, инпуты, активные иконки." },
+      { "name": "modal-emergence", "value": "0 0 80px rgba(139, 0, 0, .45), 0 0 0 1px rgba(139, 0, 0, .1)", "purpose": "Модальные окна при открытии — кровяной ореол вместо нейтральной тени." },
+      { "name": "panel-lift", "value": "0 8px 48px rgba(0, 0, 0, .8)", "purpose": "Крупные оверлеи/лайтбоксы — глубокая чёрная тень без цвета." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(.4, 0, .2, 1)", "purpose": "Единая кривая для всех transition/animation в системе." },
+      { "name": "dur-fast", "value": ".18s", "purpose": "Быстрые микро-переходы (border-color, opacity мелких элементов)." },
+      { "name": "dur-base", "value": ".28s", "purpose": "Базовая длительность — модалки fade+scale, card-reveal." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "960px" },
+      { "name": "mobile-lg", "value": "760px" },
+      { "name": "mobile", "value": "700px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Кнопка отправки форм — основное действие.",
+      "html": "<button class=\"ds-btn-primary\">Создать персонажа</button>",
+      "css": ".ds-btn-primary { background: #8B0000; border: 1px solid #B80000; color: #E8E0D0; padding: 12px 28px; font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; cursor: pointer; transition: background .15s, border-color .15s; position: relative; } .ds-btn-primary:hover { background: #B80000; border-color: #8B0000; box-shadow: 0 0 20px rgba(180,0,0,.35); } .ds-btn-primary:focus-visible { outline: 2px solid #DAA520; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: .4; cursor: not-allowed; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Вторичное/отменяющее действие — церемониальное золото.",
+      "html": "<button class=\"ds-btn-secondary\">Отмена</button>",
+      "css": ".ds-btn-secondary { background: none; border: 1px solid #B8860B; color: #B8860B; padding: 12px 28px; font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; cursor: pointer; transition: background .15s, border-color .15s, color .15s; } .ds-btn-secondary:hover { background: rgba(184,134,11,.15); border-color: #DAA520; color: #DAA520; box-shadow: 0 0 16px rgba(184,134,11,.25); } .ds-btn-secondary:focus-visible { outline: 2px solid #DAA520; outline-offset: 2px; }"
+    },
+    {
+      "name": "Character Card",
+      "kind": "card",
+      "refersTo": "card-character",
+      "description": "Карточка персонажа в гриде — кровяная боковая плашка на hover, staggered reveal при загрузке.",
+      "html": "<div class=\"ds-char-card\"><div class=\"ds-char-name\">Диана Кольски</div><div class=\"ds-char-clan\">Тореадор</div></div>",
+      "css": "@keyframes ds-card-reveal { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } } .ds-char-card { background: #120f18; border: 2px solid rgba(139,0,0,.22); border-radius: 2px; padding: 18px; cursor: pointer; position: relative; overflow: hidden; min-height: 160px; transition: all .2s cubic-bezier(.4,0,.2,1); animation: ds-card-reveal .28s cubic-bezier(.4,0,.2,1) backwards; } .ds-char-card:hover { border-color: rgba(180,20,0,.45); background: #181420; transform: translateY(-1px); } .ds-char-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #8B0000; opacity: 0; transition: opacity .2s; } .ds-char-card:hover::before { opacity: 1; } .ds-char-name { font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: .08em; color: #E8E0D0; text-transform: uppercase; margin-bottom: 4px; } .ds-char-clan { font-size: 22px; color: #a89880; font-style: italic; }"
+    },
+    {
+      "name": "Modal",
+      "kind": "custom",
+      "refersTo": "modal-box",
+      "description": "Модальное окно — fade+scale-in портал в архив, кровяной ореол вместо обычной тени.",
+      "html": "<div class=\"ds-modal-overlay ds-open\"><div class=\"ds-modal-box\"><button class=\"ds-modal-close\" aria-label=\"Закрыть\">&times;</button><div class=\"ds-modal-title\">Новый персонаж</div><div class=\"ds-modal-hint\">Заполните карточку</div></div></div>",
+      "css": ".ds-modal-overlay { display: flex; visibility: hidden; position: fixed; inset: 0; background: rgba(0,0,0,.78); align-items: center; justify-content: center; backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity .28s cubic-bezier(.4,0,.2,1), visibility .28s cubic-bezier(.4,0,.2,1); } .ds-modal-overlay.ds-open { visibility: visible; opacity: 1; pointer-events: auto; } .ds-modal-box { background: #0d0a10; border: 1px solid rgba(180,20,0,.45); border-radius: 3px; width: min(560px, 95vw); padding: 40px 44px; position: relative; box-shadow: 0 0 80px rgba(139,0,0,.45), 0 0 0 1px rgba(139,0,0,.1); transform: translateY(8px) scale(.98); transition: transform .28s cubic-bezier(.4,0,.2,1); } .ds-modal-overlay.ds-open .ds-modal-box { transform: translateY(0) scale(1); } .ds-modal-title { font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: .15em; color: #B8860B; text-transform: uppercase; margin-bottom: 6px; } .ds-modal-hint { font-size: 16px; color: #a89880; letter-spacing: .04em; } .ds-modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: #8c8279; font-size: 22px; cursor: pointer; transition: color .2s; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "form-control",
+      "description": "Поле формы — заливка-поверхность, рамка-кровь на фокусе, без свечения.",
+      "html": "<div class=\"ds-form-group\"><label class=\"ds-form-label\">Имя персонажа</label><input class=\"ds-form-control\" placeholder=\"Введите имя\" /></div>",
+      "css": ".ds-form-label { display: block; font-family: 'Cinzel', serif; font-size: 16px; letter-spacing: .2em; text-transform: uppercase; color: #a89880; margin-bottom: 7px; } .ds-form-control { width: 100%; background: #120f18; border: 1px solid rgba(139,0,0,.22); color: #E8E0D0; padding: 10px 14px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; border-radius: 2px; outline: none; transition: border-color .2s; } .ds-form-control:focus { border-color: #B80000; } .ds-form-control::placeholder { color: #8c8279; }"
+    },
+    {
+      "name": "Sidebar Nav Item",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Пункт боковой навигации — единственное системное исключение из The Full-Border Rule: левая полоса как индикатор активного раздела.",
+      "html": "<a class=\"ds-nav-item ds-active\"><span class=\"ds-nav-icon\">&#9670;</span>Персонажи</a>",
+      "css": ".ds-nav-item { display: flex; align-items: center; gap: 11px; padding: 5px 20px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #a89880; text-decoration: none; border-left: 2px solid transparent; transition: all .2s cubic-bezier(.4,0,.2,1); cursor: pointer; } .ds-nav-item:hover { color: #E8E0D0; background: rgba(139,0,0,.08); border-left-color: #8B0000; } .ds-nav-item.ds-active { color: #E8E0D0; background: rgba(139,0,0,.14); border-left-color: #8B0000; } .ds-nav-icon { font-size: 17px; opacity: .8; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Запечатанный кодекс",
+    "overview": "Sanguine System — это не панель управления, а фолиант Камарильи, который GM открывает перед сессией. Каждый экран ведёт себя как страница архива: тёмная, плотная, безмолвная до тех пор, пока курсор не коснётся записи. Тогда — и только тогда — проступает кровяной отблеск (--glow), будто страница узнаёт прикосновение. Интерфейс не украшает себя; он хранит. Иерархия строится через три шрифта-голоса — Cinzel Decorative для титулов, Cinzel для заголовков-печатей, Cormorant Garamond для самого текста хроник — а не через декоративные элементы. Система явно отказывается от: horror splatter (брызги крови, хэллоуин-эстетика — слишком буквально для архива), SaaS-дашборда (Linear/Jira/Notion — функциональная нейтральность убивает атмосферу кодекса), геймерской яркости D&D Beyond/Roll20 (иконки фэнтези, детская энергия), монохромного утилитаризма Obsidian (markdown-утилита без характера). Кровь и золото здесь не фон и не украшение — это сигнал, появляющийся только там, где требуется действие или внимание GM.",
+    "keyCharacteristics": [
+      "Почти беззвучная база: #07050a фон, рамки на 22% прозрачности крови — система говорит шёпотом, пока её не спросят.",
+      "Три типографических голоса (display / heading / body), каждый закреплён за одним уровнем иерархии — никогда не смешиваются.",
+      "Острые, полные рамки везде (1–2px), никаких декоративных полос-акцентов слева (кроме навигации — единственное исключение).",
+      "Глубина — не материальная тень, а кровяное сияние (--glow) вокруг активного/важного."
+    ],
+    "rules": [
+      { "name": "The Whisper-Until-Touched Rule", "body": "Интерфейс в покое почти не использует цвет — кровь и золото проступают только на hover/focus/active. Если элемент кричит цветом в состоянии покоя, это нарушение системы.", "section": "colors" },
+      { "name": "The Full-Border Rule", "body": "Акцентные рамки — полные (border: 1–2px solid) или сплошная заливка боковой плашки шириной 3px на всю высоту карточки, никогда тонкая цветная полоска-стрип слева/справа на тексте или списке.", "section": "colors" },
+      { "name": "The Печать Rule", "body": "Всё, что выглядит как заголовок/кнопка/навигация, набрано Cinzel в uppercase с letter-spacing ≥0.1em — будто оттиснутая печать, а не обычный UI-лейбл.", "section": "typography" },
+      { "name": "The No-Material-Shadow Rule", "body": "Серые/нейтральные box-shadow для обычной высоты запрещены. Глубина — либо кровяное/золотое сияние (значимость), либо чёрный провал (модальная изоляция).", "section": "elevation" }
+    ],
+    "dos": [
+      "Do использовать Blood Oath (#8B0000) только как сигнал действия/опасности — не как декоративный фон.",
+      "Do оставлять элементы безмолвными в покое; цвет и сияние проявляются на hover/focus/active.",
+      "Do использовать полные рамки (1–2px solid) или полноширинные боковые плашки (3px+, на всю высоту карточки) для акцента.",
+      "Do держать радиусы в диапазоне 1–6px (10px — редкое исключение для крупных модалок-лайтбоксов).",
+      "Do анимировать через transform/opacity с var(--ease) и токенами --dur-fast/--dur-base; уважать prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't использовать тонкую цветную полосу-стрип (border-left/border-right > 1px) как акцент на строке списка, карточке или алерте.",
+      "Don't добавлять horror-splatter эстетику (брызги крови, хэллоуин-шрифты).",
+      "Don't превращать интерфейс в SaaS-дашборд (Linear/Jira/Notion).",
+      "Don't добавлять геймерскую яркость D&D Beyond/Roll20.",
+      "Don't скатываться в монохромный утилитаризм Obsidian.",
+      "Don't использовать материальные серые тени для обычной высоты.",
+      "Don't анимировать display/layout-свойства напрямую — используйте visibility+opacity+pointer-events."
+    ]
+  }
+}
