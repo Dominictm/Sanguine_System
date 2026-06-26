@@ -126,7 +126,12 @@
       "PowerShell(Start-Sleep -Seconds 3; try { $r = Invoke-WebRequest -Uri http://localhost:3000/ -UseBasicParsing -TimeoutSec 3; if \\($r.RawContentLength -gt 100\\) { \"✓ Server responding\" } } catch { \"⏳ Server starting... \" + $_.Exception.Message })",
       "Bash(grep -E \"modules/[^/]+/[^/]+\\\\.md$\")",
       "PowerShell(node -e \"console.log\\(/test\\\\Z/.test\\('test'\\)\\); console.log\\(/test\\\\Z/.test\\('test\\\\n'\\)\\); console.log\\(/test$/.test\\('test'\\)\\); console.log\\(/test$/.test\\('test\\\\n'\\)\\);\")",
-      "Bash(xargs grep -li \"аэропорт\\\\|Аэропорт\\\\|aeroport\")"
+      "Bash(xargs grep -li \"аэропорт\\\\|Аэропорт\\\\|aeroport\")",
+      "Bash(node \"C:\\\\Users\\\\Vuf\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\f--VTM-VTM-project-Claude\\\\0f5d6c7b-aa28-4e6d-83cf-190945724e9e\\\\scratchpad\\\\shot_disc.mjs\")",
+      "PowerShell([System.Text.Encoding]::Default; Get-Content -Path \"c:\\\\VTM-project-Claude\\\\web\\\\start.bat\" -Encoding Byte -TotalCount 8 | ForEach-Object { $_.ToString\\(\"x2\"\\) })",
+      "Skill(impeccable)",
+      "Skill(impeccable:*)",
+      "PowerShell(node .claude/skills/impeccable/scripts/context.mjs --target web/public)"
     ],
     "additionalDirectories": [
       "f:\\VTM\\VTM-Проект-Claude\\.claude\\skills\\literary-writer",
