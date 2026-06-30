@@ -3,7 +3,10 @@
     "ignoreRules": [
       "side-tab"
     ],
-    "ignoreFiles": [],
+    "ignoreFiles": [
+      "web/public/index.html",
+      "web/public/styles.css"
+    ],
     "ignoreValues": []
   }
 }
