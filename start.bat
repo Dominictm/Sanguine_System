@@ -143,7 +143,7 @@ set CLAUDE_MODEL=sonnet
 echo   Claude model (web prose): %CLAUDE_MODEL%
 
 rem Default city for the web UI (this is the Paris campaign branch).
-set CITY=paris
+set CITY=
 echo   Default city: %CITY%
 echo.
 
