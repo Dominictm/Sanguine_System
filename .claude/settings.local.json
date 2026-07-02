@@ -131,7 +131,8 @@
       "PowerShell([System.Text.Encoding]::Default; Get-Content -Path \"c:\\\\VTM-project-Claude\\\\web\\\\start.bat\" -Encoding Byte -TotalCount 8 | ForEach-Object { $_.ToString\\(\"x2\"\\) })",
       "Skill(impeccable)",
       "Skill(impeccable:*)",
-      "PowerShell(node .claude/skills/impeccable/scripts/context.mjs --target web/public)"
+      "PowerShell(node .claude/skills/impeccable/scripts/context.mjs --target web/public)",
+      "Bash(timeout 20 node -e \"require\\('./server.js'\\)\")"
     ],
     "additionalDirectories": [
       "f:\\VTM\\VTM-Проект-Claude\\.claude\\skills\\literary-writer",
