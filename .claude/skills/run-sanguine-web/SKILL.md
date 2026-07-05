@@ -11,16 +11,16 @@ get rediscovered (and re-billed) from scratch every session.
 ## 1. The dev server is usually already running — restart, don't relaunch
 
 `web/wrapper.js` supervises `web/server.js` and restarts it on exit code 75.
-Assume a server is already up on `http://localhost:3000` (the user's own
+Assume a server is already up on `http://localhost:4295` (the user's own
 session). To pick up code changes:
 
 ```bash
-curl -s -X POST http://localhost:3000/api/restart   # wrapper relaunches server.js
+curl -s -X POST http://localhost:4295/api/restart   # wrapper relaunches server.js
 sleep 2
 ```
 
 Only start a fresh one (`node web/server.js` or `npm run dev` from `web/`) if
-`curl http://localhost:3000/api/status` fails entirely. Never kill node
+`curl http://localhost:4295/api/status` fails entirely. Never kill node
 processes by name/PID guesswork — you can't tell the dev server apart from
 unrelated node processes (MCP servers etc. also show up in the process list).
 
@@ -30,7 +30,7 @@ unrelated node processes (MCP servers etc. also show up in the process list).
 "/c/Program Files/Google/Chrome/Application/chrome.exe" \
   --headless=new --disable-gpu --remote-debugging-port=9333 \
   --user-data-dir="/tmp/cdp-profile-$$" \
-  "http://localhost:3000/?city=balmont" > /tmp/chrome.log 2>&1 &
+  "http://localhost:4295/?city=balmont" > /tmp/chrome.log 2>&1 &
 sleep 3
 curl -s http://localhost:9333/json/version   # confirms it's up
 ```
