@@ -132,7 +132,10 @@
       "Skill(impeccable)",
       "Skill(impeccable:*)",
       "PowerShell(node .claude/skills/impeccable/scripts/context.mjs --target web/public)",
-      "Bash(timeout 20 node -e \"require\\('./server.js'\\)\")"
+      "Bash(timeout 20 node -e \"require\\('./server.js'\\)\")",
+      "Bash(git commit -m ' *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)"
     ],
     "additionalDirectories": [
       "f:\\VTM\\VTM-Проект-Claude\\.claude\\skills\\literary-writer",
