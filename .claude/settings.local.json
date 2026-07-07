@@ -135,7 +135,8 @@
       "Bash(timeout 20 node -e \"require\\('./server.js'\\)\")",
       "Bash(git commit -m ' *)",
       "Bash(git checkout *)",
-      "Bash(git merge *)"
+      "Bash(git merge *)",
+      "Read(//c/Users/Vuf/AppData/Local/Temp/claude/f--VTM-VTM-project-Claude/14d28216-a4b7-4914-bae1-27b613aa963b/scratchpad/**)"
     ],
     "additionalDirectories": [
       "f:\\VTM\\VTM-Проект-Claude\\.claude\\skills\\literary-writer",
