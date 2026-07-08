@@ -136,7 +136,17 @@
       "Bash(git commit -m ' *)",
       "Bash(git checkout *)",
       "Bash(git merge *)",
-      "Read(//c/Users/Vuf/AppData/Local/Temp/claude/f--VTM-VTM-project-Claude/14d28216-a4b7-4914-bae1-27b613aa963b/scratchpad/**)"
+      "Read(//c/Users/Vuf/AppData/Local/Temp/claude/f--VTM-VTM-project-Claude/14d28216-a4b7-4914-bae1-27b613aa963b/scratchpad/**)",
+      "Bash(curl -s -X POST http://localhost:4295/api/restart)",
+      "Bash(curl -s \"http://localhost:4295/api/characters?city=balmont\")",
+      "Bash(curl -s http://localhost:4295/api/status)",
+      "Bash(timeout 5 node server.js)",
+      "Bash(curl -s http://localhost:4295/api/characters)",
+      "Bash(cat /tmp/server.log | tail -50)",
+      "Read(//tmp/**)",
+      "Bash(curl -v http://localhost:4295/api/status)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:4295/api/status\")",
+      "PowerShell(\\(Invoke-WebRequest -Uri \"http://localhost:4295/api/characters?city=balmont\" | Select-Object -ExpandProperty Content\\) -replace '[\\\\r\\\\n]' | Select-String -Pattern 'slug\":\"[^\"]+' -AllMatches | Select-Object -First 3 | ForEach-Object { $_.Matches } | ForEach-Object { $_.Value })"
     ],
     "additionalDirectories": [
       "f:\\VTM\\VTM-Проект-Claude\\.claude\\skills\\literary-writer",

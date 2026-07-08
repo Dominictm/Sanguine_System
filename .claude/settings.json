@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node \"C:/Users/Vuf/AppData/Local/Temp/test_sheet_logic.js\")",
+      "Bash(node --check web/public/scripts.js)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(xargs grep -l \"Дисциплин\")",
+      "Bash(xargs head -80)",
+      "Bash(xargs grep \"Дисциплин\")",
+      "Bash(cd \"f:/VTM/разработка/VТМ-project-Claude\" && find . -name \"*-sheet.md\" | head -1)",
+      "Read(//f/VTM/разработка/**)",
+      "Read(//f/VTM/ࠧࠡ�⪠/**)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -X POST http://localhost:4295/api/restart)",
+      "Bash(curl -s http://localhost:4295/api/status)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --remote-debugging-port=9340 --user-data-dir=\"/tmp/cdp-340\" \"http://localhost:4295/?city=paris\")",
+      "Bash(node \"C:\\\\Users\\\\Vuf\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\f--VTM------------VTM-project-Claude\\\\4d3b2fee-0f49-42a6-9d63-77ebe7effb85\\\\scratchpad\\\\test_v20_picker.js\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --remote-debugging-port=9341 --user-data-dir=\"/tmp/cdp-341\" \"http://localhost:4295/?city=paris\")",
+      "Bash(node \"C:\\\\Users\\\\Vuf\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\f--VTM------------VTM-project-Claude\\\\4d3b2fee-0f49-42a6-9d63-77ebe7effb85\\\\scratchpad\\\\test_v20_picker2.js\")",
+      "Bash(git commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Vuf\\AppData\\Local\\Temp"
+    ]
+  }
+}
