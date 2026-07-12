@@ -2,7 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(node \"C:/Users/Vuf/AppData/Local/Temp/test_sheet_logic.js\")",
-      "Bash(node --check web/public/scripts.js)",
+      "Bash(node --check web/public/scripts/scripts.js)",
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(xargs grep -l \"Дисциплин\")",
@@ -44,7 +44,7 @@
       "Bash(node -e \"const m = require\\('./web/lib/merits-loader.js'\\); const phys = m.getMerits\\('physical'\\); console.log\\('✅ Loader работает'\\); console.log\\('   Физических достоинств:', phys.length\\); console.log\\('   Первое достоинство:', phys[0].name\\); console.log\\('   Последнее достоинство:', phys[phys.length-1].name\\)\")",
       "Bash(curl -s http://localhost:4295/api/library/merits/physical)",
       "Bash(node -e \"const data = JSON.parse\\(require\\('fs'\\).readFileSync\\(0, 'utf8'\\)\\); console.log\\('✅ API endpoint работает'\\); console.log\\('   Элементов:', data.length\\); console.log\\('   Первое достоинство:', data[0].name, '\\(' + data[0].points + 'pt\\)'\\); console.log\\('   Последнее достоинство:', data[data.length-1].name, '\\(' + data[data.length-1].points + 'pt\\)'\\)\")",
-      "Bash(node -c web/public/scripts.js)",
+      "Bash(node -c web/public/scripts/scripts.js)",
       "Bash(ls \"F:\\\\VTM\\\\разработка\\\\библиотека для фаундри\\\\biblioteka-master\\\\wod-dostoinstva\\\\packs\\\\_source\\\\vampiremerits\")",
       "Read(//f/VTM/разработка/библиотека для фаундри/biblioteka-master/wod-dostoinstva/packs/_source/vampiremerits/умственные/**)",
       "Bash(git commit -m 'feat: add merit categories \\(mental, social, supernatural\\) to library *)",
