@@ -54,7 +54,8 @@
       "Bash(find \"f:/VTM/разработка/библиотека для фаундри/biblioteka-master/wod-nedostatki/packs/_source\" -type d 2>&1 | head -20)",
       "Read(//f/VTM/разработка/библиотека для фаундри/biblioteka-master/wod-nedostatki/packs/_source/**)",
       "Bash(ls \"f:/VTM/разработка/библиотека для фаундри/biblioteka-master/wod-nedostatki/packs/_source/vampiredemerits/физические\" | head -20)",
-      "Read(//f/VTM/разработка/библиотека для фаундри/biblioteka-master/wod-nedostatki/packs/_source/vampiredemerits/физические/**)"
+      "Read(//f/VTM/разработка/библиотека для фаундри/biblioteka-master/wod-nedostatki/packs/_source/vampiredemerits/физические/**)",
+      "Bash(node wrapper.js)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Vuf\\AppData\\Local\\Temp"
