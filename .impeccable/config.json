@@ -7,6 +7,73 @@
       "web/public/index.html",
       "web/public/styles.css"
     ],
-    "ignoreValues": []
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#0d0a12",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.347Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#d8d2c8",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.422Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#e8e2d8",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.494Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#8a8378",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.575Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#5a4a4a",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.655Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#b0a898",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.729Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#3a3340",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.810Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#1a1a1a",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.888Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:15.962Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff",
+        "reason": "User confirmed: standalone chronicle-book export document cannot use app CSS tokens",
+        "createdAt": "2026-07-13T19:17:16.048Z"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "16px",
+        "reason": "User confirmed: standalone chronicle-book export document, base serif size",
+        "createdAt": "2026-07-13T19:17:30.154Z"
+      }
+    ]
   }
 }
