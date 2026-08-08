@@ -16,18 +16,32 @@
 - **Runtime:** Node.js (нативные `fetch`/`WebSocket`/`node --test` — нужен
   относительно свежий Node; в разработке использовался Node 22+), Windows
   (PowerShell 5.1 / Git Bash)
-- **Веб-сервер:** `web/server.js` (Express), порт 4295. Запускается через
-  `web/wrapper.js` (`npm start` в `web/`) — супервизор, перезапускающий
-  `server.js` по exit-коду 75; есть `POST /api/restart` для применения правок
-  кода к уже запущенному серверу без падения терминала
-- **Фронтенд:** SPA в `web/public/` (`index.html`/`scripts.js`/`styles.css`/
-  `rules-v20.js`) — ванильный JS, никаких бандлеров и npm-зависимостей на клиент
+- **Веб-сервер:** `web/server.js` (Express), порт 4295 — тонкий composition
+  root: подключает `app.use()` роутеры из `web/routes/*.js` (`characters.js`,
+  `library.js`, `cities.js`, `locations.js`, `chronicles.js`, `modules.js`,
+  `generation.js`, `dashboard.js`, `archive.js`, `threads.js`, `audio.js`,
+  `tools.js`) — сама бизнес-логика API живёт в этих файлах, не в `server.js`.
+  Запускается через `web/wrapper.js` (`npm start` в `web/`) — супервизор,
+  перезапускающий `server.js` по exit-коду 75; есть `POST /api/restart` для
+  применения правок кода к уже запущенному серверу без падения терминала
+- **Фронтенд:** SPA в `web/public/` — `index.html` + `styles.css` +
+  множество файлов в `web/public/scripts/` (`scripts.js` — общий кор/роутинг
+  `navigate()`, плюс по файлу на область: `char-detail.js`, `graph.js`,
+  `relations-manage.js`, `locations.js`, `v20-sheet.js`, `library-authoring.js`,
+  `city.js`, `modules.js`, `search.js`, `tour.js`, `utils.js`, `dice.js`,
+  `rules-v20.js` и др.) — ванильный JS, никаких бандлеров и npm-зависимостей
+  на клиент
 - **ИИ-провайдеры:** Anthropic / OpenRouter / OpenAI — маршрутизация в
-  `web/server.js` (`makeGenerationClient`); `AI_MOCK=1` — детерминированный
-  мок-провайдер для тестов, без сетевых вызовов
-- **Данные:** Markdown-файлы в `cities/`, `system/` — никакой БД; общая
-  пар­синг-библиотека `web/lib/parsers.js` (single source of truth и для
-  сервера, и для CLI-тулов в `tools/`)
+  `web/routes/generation.js` (`makeGenerationClient`); `AI_MOCK=1` —
+  детерминированный мок-провайдер для тестов, без сетевых вызовов
+- **Данные:** Markdown-файлы в `cities/`, `system/` (+ несколько JSON-справочников
+  в `system/library/`, напр. `relation-types.json`) — никакой БД; общая
+  парсинг-библиотека `web/lib/parsers/` (по домену: `character.js`, `city.js`,
+  `location.js`, `chronicle.js`, `scenario.js`, `threads.js`, `timeline.js`,
+  `district.js`, `worldState.js`, `shared.js`; `index.js` реэкспортирует всё
+  плоским объектом) — single source of truth и для сервера, и для CLI-тулов
+  в `tools/`. Не путать с одноимённым `web/lib/relation-types.js` — это отдельный
+  модуль библиотеки типов связей, а не парсер карточек
 
 ---
 
@@ -46,8 +60,13 @@ system/rules/                      — глобальные правила (npcs
                                       literary_style, character_sheet_v20/mortal/changeling …)
 system/schema/card_schema.md       — контракт полей карточки персонажа
 system/schema/validate_cards.js    — линтер карточек
-web/server.js                      — API и ИИ-маршрутизация
-web/lib/parsers.js                 — парсеры карточек/локаций/связей/дневников (общий для веба и tools/)
+system/library/                    — справочники: disciplines/, psychics/, clans/, sects/ (MD),
+                                      relation-types.json и др. JSON-справочники
+web/server.js                      — composition root: подключает роутеры из web/routes/
+web/routes/                        — API-логика по областям (characters, library, cities,
+                                      locations, chronicles, modules, generation, dashboard …)
+web/lib/parsers/                   — парсеры карточек/локаций/связей/дневников (общий для веба и tools/)
+web/lib/relation-types.js          — библиотека видов связей (system/library/relation-types.json)
 web/lib/migrations.js              — раннер миграций формата (см. tools/migrations/)
 web/.env                           — ключи провайдеров (НЕ в git)
 web/tests/                         — node:test (`all.test.js` юнит/интеграция, `e2e.test.js` сквозной цикл)
@@ -100,8 +119,10 @@ update.bat                         — обновление релизной в�
 - `web/.env` — никогда не читать, не изменять, не выводить содержимое
 - `cities/*/archive/events.md` — агрегат; пересобирается только через `build_city_events.js`
 - `system/schema/card_schema.md` — контракт карточки; изменения ломают парсер и линтер
-- `web/lib/parsers.js` — менять только если задача явно касается парсинга (это общий
-  модуль для сервера и CLI — drift между ними уже был источником багов)
+- `web/lib/parsers/` — менять только если задача явно касается парсинга (это общий
+  модуль для сервера и CLI — drift между ними уже был источником багов; в частности,
+  запись должна нормализовать CRLF/CR так же, как это делает `parseCharacter()` при
+  чтении, иначе write- и read-пути разойдутся в том, какой блок карточки «текущий»)
 - Данные конкретных городов (`cities/<город>/`), если задача не про этот город явно
 - Ветку/воркtree `test` — не трогать руками: пересобирается автоматически из `master`
   при каждом push (`.github/workflows/release-test.yml` → `tools/build_release.js`),
