@@ -54,7 +54,9 @@ cities/<город>/                    — данные города (созд�
   archive/                         — political_state.md, events.md (агрегат — см. ниже),
                                       timeline.md, characters_index.md, visitors.md
   characters/<линейка>/<slug>/     — карточки персонажей (<slug>.md, -sheet.md/.json, art/, journal/)
-  locations/district_NN/<район>/   — карточки локаций
+  locations/<район>/               — карточки локаций (плоско, без обёртки district_NN/;
+                                      район — District-сущность со своей district.md,
+                                      создаётся отдельно: POST /api/cities/:slug/districts)
   chronicles/<хроника>/            — chronicle.md, events.md, open_threads.md, modules/
 system/rules/                      — глобальные правила (npcs_city, module_rules, diary_rules,
                                       literary_style, character_sheet_v20/mortal/changeling …)
